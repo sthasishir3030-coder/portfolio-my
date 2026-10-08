@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sishir | Full-Stack Developer & Computer Engineering Aspirant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand"><i class="fa-solid => fa-code"></i> SISHIR<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#about" class="active"><i class="fa-solid fa-user"></i> About</a></li>
+                <li><a href="#academics"><i class="fa-solid fa-graduation-cap"></i> Academics</a></li>
+                <li><a href="#skills"><i class="fa-solid fa-laptop-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+                <li><a href="#api-demo"><i class="fa-solid fa-server"></i> API Backend</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="badge"><i class="fa-solid fa-microchip"></i> Future Computer Engineer</span>
+                    <h1>Hello, I'm <span class="highlight">Sishir</span></h1>
+                    <p class="tagline">Tech Enthusiast • Full-Stack Web Developer • STEM Student</p>
+                    <p class="bio-intro">
+                        Passionate student developer based in Nepal with hands-on experience in full-stack web development, embedded telemetry systems, and digital leadership. Preparing for Computer Engineering & BSc CSIT degree paths.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View Projects</a>
+                        <a href="#contact" class="btn btn-secondary"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-avatar-card">
+                    <div class="avatar-wrapper">
+                        <img id="profileImage" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Sishir Profile Photo">
+                        <div class="avatar-overlay">
+                            <label for="photoUploader" class="upload-btn"><i class="fa-solid fa-camera"></i> Change Photo</label>
+                            <input type="file" id="photoUploader" accept="image/*" style="display:none;">
+                        </div>
+                    </div>
+                    <div class="avatar-controls">
+                        <p class="small-text"><i class="fa-solid fa-image"></i> Dynamic Profile Photo Manager</p>
+                        <div class="avatar-presets">
+                            <button class="preset-btn active" onclick="setAvatarPreset(0)">Default</button>
+                            <button class="preset-btn" onclick="setAvatarPreset(1)">Tech</button>
+                            <button class="preset-btn" onclick="setAvatarPreset(2)">Minimal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Background Section -->
+        <section id="academics" class="section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Academic Section</h2>
+                <p>Educational background, NEB STEM coursework, and entrance preparation highlights</p>
+            </div>
+
+            <div class="academic-grid">
+                <div class="academic-card shadow-card">
+                    <div class="academic-header">
+                        <span class="year-badge">Higher Secondary (Class 11 - 12)</span>
+                        <h3>National Examination Board (NEB) - Science Stream</h3>
+                        <p class="sub-location"><i class="fa-solid fa-location-dot"></i> Nepal</p>
+                    </div>
+                    <p class="academic-desc">Completed Class 12 NEB Board studies with a comprehensive background in Physics, Chemistry, Higher Mathematics, and Computer Science.</p>
+                    
+                    <div class="coursework-tags">
+                        <span class="tag"><i class="fa-solid fa-calculator"></i> Vector Calculus & Complex Numbers</span>
+                        <span class="tag"><i class="fa-solid fa-flask"></i> Chemical Kinetics & Thermodynamics</span>
+                        <span class="tag"><i class="fa-solid fa-atom"></i> Wave Optics & Modern Physics</span>
+                        <span class="tag"><i class="fa-solid fa-code"></i> C Programming & Database Foundations</span>
+                    </div>
+                </div>
+
+                <div class="academic-card shadow-card">
+                    <div class="academic-header">
+                        <span class="year-badge">Current Pursuit</span>
+                        <h3>Higher Education Entrance Preparation</h3>
+                        <p class="sub-location"><i class="fa-solid fa-university"></i> IOE / Pokhara University / Paschimanchal Campus</p>
+                    </div>
+                    <p class="academic-desc">Actively preparing for Engineering & CS entrance exams (IOE Entrance, BSc CSIT, Software Engineering degree paths).</p>
+                    
+                    <div class="coursework-tags">
+                        <span class="tag"><i class="fa-solid fa-book-open"></i> Advanced Mathematics</span>
+                        <span class="tag"><i class="fa-solid fa-vial"></i> Volumetric Analysis</span>
+                        <span class="tag"><i class="fa-solid fa-bolt"></i> Electricity & Magnetism</span>
+                        <span class="tag"><i class="fa-solid fa-network-wired"></i> Computer Systems Architecture</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive GPA Calculator Module -->
+            <div class="gpa-box shadow-card">
+                <h3><i class="fa-solid fa-calculator"></i> Academic GPA & Percentage Estimator (Backend Powered)</h3>
+                <p>Test the backend API calculation engine by entering your subject scores below:</p>
+                <form id="gpaForm" class="gpa-form">
+                    <div class="input-group">
+                        <label for="mathScore">Mathematics</label>
+                        <input type="number" id="mathScore" min="0" max="100" value="88" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="physicsScore">Physics</label>
+                        <input type="number" id="physicsScore" min="0" max="100" value="85" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="chemScore">Chemistry</label>
+                        <input type="number" id="chemScore" min="0" max="100" value="82" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="csScore">Computer Science</label>
+                        <input type="number" id="csScore" min="0" max="100" value="94" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-calculator"></i> Calculate via Express API</button>
+                </form>
+                <div id="gpaResult" class="result-display hidden"></div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-laptop-code"></i> Technical Stack & Skills</h2>
+                <p>Languages, frameworks, database systems, and development tools</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category shadow-card">
+                    <h3><i class="fa-solid fa-code"></i> Languages</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>JavaScript (ES6+)</span><div class="bar"><div class="fill" style="width: 88%;"></div></div></div>
+                        <div class="skill-item"><span>PHP</span><div class="bar"><div class="fill" style="width: 75%;"></div></div></div>
+                        <div class="skill-item"><span>C Language</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
+                        <div class="skill-item"><span>HTML5 & CSS3</span><div class="bar"><div class="fill" style="width: 92%;"></div></div></div>
+                        <div class="skill-item"><span>Python</span><div class="bar"><div class="fill" style="width: 70%;"></div></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category shadow-card">
+                    <h3><i class="fa-solid fa-server"></i> Backend & Databases</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>Node.js & Express</span><div class="bar"><div class="fill" style="width: 82%;"></div></div></div>
+                        <div class="skill-item"><span>MongoDB Atlas</span><div class="bar"><div class="fill" style="width: 78%;"></div></div></div>
+                        <div class="skill-item"><span>MySQL</span><div class="bar"><div class="fill" style="width: 72%;"></div></div></div>
+                        <div class="skill-item"><span>RESTful API Design</span><div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-category shadow-card">
+                    <h3><i class="fa-solid fa-wrench"></i> Developer Tools</h3>
+                    <div class="skill-list">
+                        <div class="skill-item"><span>Git & GitHub</span><div class="bar"><div class="fill" style="width: 85%;"></div></div></div>
+                        <div class="skill-item"><span>Vercel Deployment</span><div class="bar"><div class="fill" style="width: 88%;"></div></div></div>
+                        <div class="skill-item"><span>Graphic Design</span><div class="bar"><div class="fill" style="width: 80%;"></div></div></div>
+                        <div class="skill-item"><span>CanSat Hardware Telemetry</span><div class="bar"><div class="fill" style="width: 75%;"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-diagram-project"></i> Featured Academic & Practical Projects</h2>
+                <p>Key software development and technical initiatives completed during my high school tenure</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card shadow-card">
+                    <div class="project-banner">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>School Subdomain Portal</h3>
+                        <p>Designed and deployed an online institutional subdomain platform providing resources, schedules, and information access for high school students.</p>
+                        <div class="project-tech">
+                            <span>HTML/CSS</span><span>JavaScript</span><span>PHP</span><span>Vercel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card shadow-card">
+                    <div class="project-banner alt-banner-1">
+                        <i class="fa-solid fa-satellite"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>CanSat Prototype & Telemetry System</h3>
+                        <p>Collaborated on constructing a atmospheric sensor micro-satellite model transmitting real-time environmental data back to ground control terminal.</p>
+                        <div class="project-tech">
+                            <span>Sensors</span><span>C/C++</span><span>Telemetry</span><span>Hardware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card shadow-card">
+                    <div class="project-banner alt-banner-2">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Digital Trophy Display System</h3>
+                        <p>Created an interactive digital gallery showcase system for organizing, archiving, and displaying institutional awards and student recognitions.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>MongoDB</span><span>CSS Grid</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card shadow-card">
+                    <div class="project-banner alt-banner-3">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="project-body">
+                        <h3>Interact Club IT & Brand Management</h3>
+                        <p>Led digital initiatives, website maintenance, and digital branding as an IT Board Member for the Interact Club of Pokhara Lakeside.</p>
+                        <div class="project-tech">
+                            <span>IT Leadership</span><span>Graphic Design</span><span>Web Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulated Express API Backend Section -->
+        <section id="api-demo" class="section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-server"></i> JavaScript Node Express Backend Console</h2>
+                <p>Live embedded REST API engine running inside JavaScript — inspect dynamic route calls and JSON responses in real-time</p>
+            </div>
+
+            <div class="api-console-grid shadow-card">
+                <div class="api-controls">
+                    <h3><i class="fa-solid fa-network-wired"></i> API Route Tester</h3>
+                    <div class="route-buttons">
+                        <button onclick="triggerApiRoute('GET', '/api/v1/academics')" class="btn-api get"><span class="badge-method get">GET</span> /api/v1/academics</button>
+                        <button onclick="triggerApiRoute('GET', '/api/v1/projects')" class="btn-api get"><span class="badge-method get">GET</span> /api/v1/projects</button>
+                        <button onclick="triggerApiRoute('GET', '/api/v1/skills')" class="btn-api get"><span class="badge-method get">GET</span> /api/v1/skills</button>
+                        <button onclick="triggerApiRoute('GET', '/api/v1/messages')" class="btn-api get"><span class="badge-method get">GET</span> /api/v1/messages</button>
+                    </div>
+
+                    <div class="db-actions">
+                        <h4><i class="fa-solid fa-database"></i> Persistence Storage</h4>
+                        <button onclick="clearMessagesDb()" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i> Clear Stored Messages</button>
+                    </div>
+                </div>
+
+                <div class="api-display">
+                    <div class="console-header">
+                        <span><i class="fa-solid fa-terminal"></i> Response Payload (Express JSON)</span>
+                        <span id="statusBadge" class="status-badge">200 OK</span>
+                    </div>
+                    <pre id="jsonOutput" class="json-code"><code>// Click an API route above or submit contact form to inspect Express responses...</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-paper-plane"></i> Contact Me</h2>
+                <p>Get in touch for academic collaborations, projects, or inquiries</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info shadow-card">
+                    <h3>Contact Information</h3>
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Pokhara / Syangja, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <div>
+                            <h4>Academic Target</h4>
+                            <p>BSc CSIT / Computer Engineering</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sishir.dev@example.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-box shadow-card">
+                    <h3>Send a Direct Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="senderName">Your Name</label>
+                            <input type="text" id="senderName" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senderEmail">Your Email</label>
+                            <input type="email" id="senderEmail" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senderMsg">Message</label>
+                            <textarea id="senderMsg" rows="4" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Post Message (API Call)</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Sishir. Built with HTML5, CSS3 & Node/JavaScript Express Backend Simulation.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/server.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
